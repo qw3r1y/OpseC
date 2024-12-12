@@ -1,0 +1,2 @@
+# OpseC
+Automated opsec tool
