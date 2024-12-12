@@ -11,6 +11,9 @@ chmod +x *
 ./start.sh
 ```
 <p align="center"> <img src="https://github.com/user-attachments/assets/4e2ac820-b9fb-4812-bf43-e64984b02b4c" alt="opsecmenu" width="600"/> </p>
+<p align="center">
+  <strong>Figure 1:</strong> Main Interface of the OpSec Menu Tool.
+</p>
 
 
 -------------------------------------------------------------------------------
