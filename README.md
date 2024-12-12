@@ -62,14 +62,15 @@ Bu seçenek ile yukarıda yüklenen araçların konfigürasyon ayarlarına eriş
   - DNSCrypt aracı etkinleştirilmiştir.
 
 - **Araç Ayarları:**
-  1. **Firejail:** Uygulama izolasyonu yapılandırılır ve kullanımı açıklanır.
-  2. **UFW:** Basit ve etkili bir güvenlik duvarı aracı için portlar yapılandırılır.
-  3. **OpenSnitch:** Giden bağlantı izleme aracı elle başlatma hatırlatması yapılır.
-  4. **DNSCrypt:** DNS trafiğinin şifrelenmesi etkinleştirilir.
-  5. **Fail2Ban:** Brute force saldırılarına karşı koruma kuralları yapılandırılır.
-  6. **Suricata:** Ağ tabanlı tehdit algılama ve önleme aracı yapılandırılır.
-  7. **Güvenlik Taramaları:** Sistem güvenliği için taramalar yapılır.
-  8. **Tor:** Gizlilik ve anonimlik için Tor yapılandırılır.
+  - **Firejail**: Uygulama izolasyonu yapılandırılır ve kullanımı açıklanır.
+  - **UFW**: Basit ve etkili bir güvenlik duvarı aracı için portlar yapılandırılır.
+  - **OpenSnitch**: Giden bağlantı izleme aracı elle başlatma hatırlatması yapılır.
+  - **DNSCrypt**: DNS trafiğinin şifrelenmesi etkinleştirilir.
+  - **Fail2Ban**: Brute force saldırılarına karşı koruma kuralları yapılandırılır.
+  - **Suricata**: Ağ tabanlı tehdit algılama ve önleme aracı yapılandırılır.
+  - **Güvenlik Taramaları**: Sistem güvenliği için taramalar yapılır.
+  - **Tor**: Gizlilik ve anonimlik için Tor yapılandırılır.
+
 
 ### 3. Logları ve Aktif Kuralları Görüntüleme
 
