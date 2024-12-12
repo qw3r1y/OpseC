@@ -15,11 +15,7 @@ chmod +x *
 
 ### 1. Gerekli Dosyaların Yüklenmesi
 
-Bu seçenek, OPSEC aracı için gerekli olan dosyaları yükler. Bu bölümde üç alt seçenek bulunur:
-
-1. **Temiz Kurulum:**
-   - Sisteminizde daha önce yüklenmiş olan dosyalar varsa, bunları kaldırır ve sıfırdan temiz bir kurulum yapar.
-   - Aşağıdaki araçlar yüklenir:
+Bu seçenek, OPSEC aracı için gerekli olan aşağıdaki araçları yükler:
      - **Strongswan:** Güvenli VPN bağlantıları için kullanılan bir araç.
      - **Tor:** İnternet gizliliği için anonimleştirici bir araç.
      - **Suricata:** Ağ tabanlı tehdit algılama ve önleme aracı.
@@ -38,6 +34,12 @@ Bu seçenek, OPSEC aracı için gerekli olan dosyaları yükler. Bu bölümde ü
      - **Signal:** Güvenli mesajlaşma uygulaması.
      - **Fail2Ban:** Brute force saldırılarına karşı koruma.
      - **OSSEC:** Host tabanlı güvenlik ve log analizi araç.
+
+
+Bu bölümde üç alt seçenek bulunur:
+
+1. **Temiz Kurulum:**
+   - Sisteminizde daha önce yüklenmiş olan dosyalar varsa, bunları kaldırır ve sıfırdan temiz bir kurulum yapar.
 
 2. **Eksik Araçların Yüklenmesi:**
    - Araçların sisteminizde mevcut olup olmadığını kontrol eder ve eksik olanları yükler.
@@ -81,4 +83,4 @@ Bu seçenek ile sistemde yüklü olan araçlardan gelen logları ve aktif güven
 
 - Araç, Linux tabanlı sistemlerde çalışmak üzere tasarlanmıştır.
 - `start.sh` dosyasını çalıştırmadan önce gerekli izinlerin verildiğinden emin olun.
-- Yüklenilen araçlar ve konfigürasyonlar hakkında daha fazla bilgi almak için ilgili dokümantasyona göz atabilirsiniz.
+- Yüklenilen araçlar ve konfigürasyonlar hakkında daha fazla bilgi almak için ilgili araçların dokümantasyona göz atabilirsiniz.
