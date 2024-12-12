@@ -10,7 +10,7 @@ Before running the tool, you need to grant the necessary permissions to all file
 chmod +x *
 ./start.sh
 ```
-<p align="center"> <img src="https://github.com/user-attachments/assets/4e2ac820-b9fb-4812-bf43-e64984b02b4c" alt="opsecmenu" width="400"/> </p>
+<p align="center"> <img src="https://github.com/user-attachments/assets/4e2ac820-b9fb-4812-bf43-e64984b02b4c" alt="opsecmenu" width="600"/> </p>
 
 
 -------------------------------------------------------------------------------
@@ -55,11 +55,11 @@ There are three sub-options in this section:
   - **Strongswan, Tor, Suricata, Chkrootkit, Rkhunter, ClamAV, Firejail, VPN Settings, Tor Browser, UFW, OpenSnitch, DNSCrypt, ExifTool, BleachBit, KeePass, Signal, Fail2Ban, OSSEC.**
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/8ba2cb9c-39c6-4796-99f9-c01fa3d67c70" alt="2" width="400"/>
+  <img src="https://github.com/user-attachments/assets/8ba2cb9c-39c6-4796-99f9-c01fa3d67c70" alt="2" width="600"/>
 </p>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/189aaefe-9d7a-4cb7-ad57-0de57d8edd04" alt="3" width="400"/>
+  <img src="https://github.com/user-attachments/assets/189aaefe-9d7a-4cb7-ad57-0de57d8edd04" alt="3" width="600"/>
 </p>
 
 -------------------------------------------------------------------------------------
@@ -83,7 +83,9 @@ With this option, you can access the configuration settings of the above install
   - **Security Scans**: Scans are performed for system security.
   - **Tor**: Tor is configured for privacy and anonymity.
  
-![4](https://github.com/user-attachments/assets/4a86e3a9-056c-44cf-8fde-992397fa7568)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/4a86e3a9-056c-44cf-8fde-992397fa7568" alt="4" width="600"/>
+</p>
 
 ----------------------------------------------------------------
 ### 3. View Logs and Active Rules 📊
@@ -99,8 +101,9 @@ With this option, you can see the logs and active security rules from the tools 
 - **Dnscrypt Enablement:**
   - Allows you to see whether Dnscrypt is enabled or not.
     
-![5](https://github.com/user-attachments/assets/954f1332-bda1-4b43-8a59-5f724f2fba5f)
-
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/954f1332-bda1-4b43-8a59-5f724f2fba5f" alt="5" width="600"/>
+</p>
 -------------------------------------------------------------------------------
 ## Usage Notes 📝
 
