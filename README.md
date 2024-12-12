@@ -1,8 +1,8 @@
-# OPSEC Araçları
+# OPSEC Araçları 🛡️
 
 Bu araç, güvenlik odaklı sistemlerinizi yapılandırmanıza, yönetmenize ve izlemeye yardımcı olmak için tasarlanmış 4 farklı bash betiğinden oluşmaktadır. Aşağıda araç hakkında detaylı bilgi ve kullanım talimatlarını bulabilirsiniz.
 
-## Başlangıç
+## Başlangıç 🚀
 
 Aracı çalıştırmadan önce tüm dosyalara gerekli izinleri vermeniz gerekmektedir. Bunu şu şekilde yapabilirsiniz:
 
