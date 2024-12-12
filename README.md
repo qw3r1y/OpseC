@@ -10,7 +10,7 @@ Before running the tool, you need to grant the necessary permissions to all file
 chmod +x *
 ./start.sh
 ```
-![opsecmenu](https://github.com/user-attachments/assets/4e2ac820-b9fb-4812-bf43-e64984b02b4c)
+<p align="center"> <img src="https://github.com/user-attachments/assets/4e2ac820-b9fb-4812-bf43-e64984b02b4c" alt="opsecmenu" width="400"/> </p>
 
 
 -------------------------------------------------------------------------------
@@ -54,8 +54,13 @@ There are three sub-options in this section:
 - Reinstalls all the following tools regardless of whether they are present on your system:
   - **Strongswan, Tor, Suricata, Chkrootkit, Rkhunter, ClamAV, Firejail, VPN Settings, Tor Browser, UFW, OpenSnitch, DNSCrypt, ExifTool, BleachBit, KeePass, Signal, Fail2Ban, OSSEC.**
 
-![2](https://github.com/user-attachments/assets/8ba2cb9c-39c6-4796-99f9-c01fa3d67c70)
-![3](https://github.com/user-attachments/assets/189aaefe-9d7a-4cb7-ad57-0de57d8edd04)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/8ba2cb9c-39c6-4796-99f9-c01fa3d67c70" alt="2" width="400"/>
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/189aaefe-9d7a-4cb7-ad57-0de57d8edd04" alt="3" width="400"/>
+</p>
 
 -------------------------------------------------------------------------------------
 
