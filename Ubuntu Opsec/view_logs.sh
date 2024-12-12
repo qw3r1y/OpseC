@@ -16,10 +16,11 @@ fi
 echo -e "${YELLOW}[!] Please make sure to configure your settings by selecting option 2 in the main menu. If not done, log monitoring may not work properly.${RESET}"
 
 check_and_install_xterm() {
-    if ! dpkg-query -l | grep -q "xterm"; then
+    if ! dpkg -l | grep -q "^ii.*xterm"; then
         echo -e "${YELLOW}xterm is not installed. Installing...${RESET}"
+        echo -e "${RED}xterm downloading...${RESET}" # Bu satır eklendi
         sudo apt update && sudo apt install -y xterm
-        if dpkg-query -l | grep -q "xterm"; then
+        if dpkg -l | grep -q "^ii.*xterm"; then
             echo -e "${GREEN}xterm has been successfully installed.${RESET}"
         else
             echo -e "${RED}xterm installation failed!${RESET}"
@@ -29,6 +30,8 @@ check_and_install_xterm() {
         echo -e "${GREEN}xterm is already installed.${RESET}"
     fi
 }
+
+
 # Log file paths
 OSSEC_LOG="/var/ossec/logs/alerts/alerts.log"
 SURICATA_LOG="/var/log/suricata/fast.log"
