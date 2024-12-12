@@ -17,7 +17,9 @@ echo -e "${YELLOW}[!] Please make sure to configure your settings by selecting o
 
 check_and_install_xterm() {
     if ! dpkg -l | grep -q "^ii.*xterm"; then
+        echo " "
         echo -e "${YELLOW}xterm is not installed. Installing...${RESET}"
+        echo " "
         echo -e "${RED}xterm downloading...${RESET}" # Bu satır eklendi
         sudo apt update && sudo apt install -y xterm
         if dpkg -l | grep -q "^ii.*xterm"; then
