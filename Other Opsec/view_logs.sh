@@ -16,17 +16,23 @@ fi
 echo -e "${YELLOW}[!] Please make sure to configure your settings by selecting option 2 in the main menu. If not done, log monitoring may not work properly.${RESET}"
 
 check_and_install_xterm() {
-    if ! dpkg-query -l | grep -q "xterm"; then
-        echo -e "${YELLOW}xterm is not installed. Installing...${RESET}"
-        sudo apt update && sudo apt install -y xterm
-        if dpkg-query -l | grep -q "xterm"; then
-            echo -e "${GREEN}xterm has been successfully installed.${RESET}"
-        else
-            echo -e "${RED}xterm installation failed!${RESET}"
-            exit 1
-        fi
+    # Eğer xterm yüklü ise, kaldır
+    if apt list --installed | grep -q "xterm"; then
+        echo -e "${YELLOW}xterm is already installed. Removing it to ensure fresh installation...${RESET}"
+        sudo apt remove --purge -y xterm
+        sudo apt autoremove -y
+    fi
+
+    # Güncellemeyi yap ve xterm'i tekrar kur
+    echo -e "${YELLOW}Installing xterm...${RESET}"
+    sudo apt update -y && sudo apt install -y xterm
+
+    # Kurulum sonrası xterm'in başarıyla yüklendiğini kontrol et
+    if apt list --installed | grep -q "xterm"; then
+        echo -e "${GREEN}xterm has been successfully installed.${RESET}"
     else
-        echo -e "${GREEN}xterm is already installed.${RESET}"
+        echo -e "${RED}xterm installation failed!${RESET}"
+        exit 1
     fi
 }
 
