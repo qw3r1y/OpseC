@@ -5,44 +5,60 @@ BLUE='\033[1;34m'
 YELLOW='\033[1;33m'
 GREEN='\033[1;32m'
 RED='\033[1;31m'
-NC='\033[0m' # No Color
+NC='\033[0m' 
 
 # Suricata configuration function
 configure_suricata() {
     echo -e "${BLUE}[+] Starting Suricata configuration...${NC}"
 
-    # List network interfaces
-    echo -e "${YELLOW}[+] Available network interfaces:${NC}"
-    ip link show | awk -F': ' '/^[0-9]/ {print $2}' | grep -v "lo" # Skip "lo" interface
+    # List network interfaces (excluding "lo")
+    interfaces=($(ip link show | awk -F': ' '/^[0-9]/ {print $2}' | grep -v "lo"))
 
-    # Ask the user to select a network interface
-    echo -e "${YELLOW}[?] Enter the network interface to be used by Suricata:${NC}"
-    read -r interface
-
-    # Check the user's input for the interface
-    if ip link show "$interface" > /dev/null 2>&1; then
-        echo -e "${BLUE}[+] $interface selected.${NC}"
-
-        # Edit Suricata configuration file
-        CONFIG_FILE="/etc/suricata/suricata.yaml"
-        if [ -f "$CONFIG_FILE" ]; then
-            echo -e "${YELLOW}[+] Editing $CONFIG_FILE file...${NC}"
-            
-            # Update interface settings in the Suricata configuration file
-            sudo sed -i "s/^  - interface:.*$/  - interface: $interface/" "$CONFIG_FILE"
-
-            # Restart Suricata
-            echo -e "${BLUE}[+] Restarting Suricata...${NC}"
-            sudo systemctl restart suricata
-
-            echo -e "${GREEN}[+] Suricata configured successfully!${NC}"
-        else
-            echo -e "${RED}[!] $CONFIG_FILE not found! Is Suricata installed?${NC}"
-        fi
+    # Check if there's only one network interface
+    if [ ${#interfaces[@]} -eq 1 ]; then
+        interface="${interfaces[0]}"
+        echo -e "${YELLOW}[+] Only one network interface found: $interface${NC}"
     else
-        echo -e "${RED}[!] $interface is an invalid network interface!${NC}"
+        # If there are multiple interfaces, prompt the user to select one
+        echo -e "${YELLOW}[+] Available network interfaces:${NC}"
+        for i in "${!interfaces[@]}"; do
+            echo "$((i+1))) ${interfaces[$i]}"
+        done
+
+        # Ask the user to select a network interface
+        echo -e "${YELLOW}[?] Enter the number corresponding to the network interface to be used by Suricata:${NC}"
+        read -r interface_choice
+
+        # Validate user input
+        if [[ $interface_choice -ge 1 && $interface_choice -le ${#interfaces[@]} ]]; then
+            interface="${interfaces[$((interface_choice-1))]}"
+            echo -e "${BLUE}[+] $interface selected.${NC}"
+        else
+            echo -e "${RED}[!] Invalid selection!${NC}"
+            return 1
+        fi
     fi
+
+    # Edit Suricata configuration file
+    CONFIG_FILE="/etc/suricata/suricata.yaml"
+    if [ -f "$CONFIG_FILE" ]; then
+        echo -e "${YELLOW}[+] Editing $CONFIG_FILE file...${NC}"
+
+        # Update interface settings in the Suricata configuration file
+        sudo sed -i "s/^  - interface:.*$/  - interface: $interface/" "$CONFIG_FILE"
+
+        # Restart Suricata
+        echo -e "${BLUE}[+] Restarting Suricata...${NC}"
+        sudo systemctl restart suricata
+
+        echo -e "${GREEN}[+] Suricata configured successfully!${NC}"
+    else
+        echo -e "${RED}[!] $CONFIG_FILE not found! Is Suricata installed?${NC}"
+    fi
+
+    read -n 1 -s -r -p "Press any key to return to the menu..."
 }
+
 
 # What is Firejail?
 explain_firejail() {
@@ -50,16 +66,41 @@ explain_firejail() {
     echo -e "${YELLOW}Firejail is a security tool for Linux used to sandbox applications. \
 It limits applications' access permissions on the system, aiming to reduce \
 the impact of malicious software. Basic commands: 'firejail <application>'.${NC}"
+    
+    read -n 1 -s -r -p "Press any key to return to the menu..."    
 }
 
+# Close critical ports with UFW
 # Close critical ports with UFW
 secure_ufw_ports() {
     echo -e "${BLUE}[+] Configuring UFW for critical ports...${NC}"
     
-    # Block critical ports
-    sudo ufw deny 22 > /dev/null 2>&1   # SSH
-    sudo ufw deny 21 > /dev/null 2>&1   # FTP
-    sudo ufw deny 3389 > /dev/null 2>&1  # RDP
+    # Default critical ports
+    default_ports=(22 21 3389)  # SSH, FTP, RDP
+
+    echo -e "${YELLOW}[+] Default critical ports: ${default_ports[*]}${NC}"
+    
+    # Ask user if they want to add custom ports
+    echo -e "${YELLOW}[?] Would you like to add custom ports to block? (y/n):${NC}"
+    read -r custom_port_response
+
+    custom_ports=()
+    if [[ "$custom_port_response" =~ ^[Yy](es)?$ ]]; then
+        echo -e "${YELLOW}[?] Enter the ports you want to block, separated by space:${NC}"
+        read -r -a custom_ports
+    fi
+
+    # Block default critical ports
+    for port in "${default_ports[@]}"; do
+        sudo ufw deny "$port" > /dev/null 2>&1
+        echo -e "${GREEN}[+] Port $port blocked (default).${NC}"
+    done
+
+    # Block custom ports if provided
+    for port in "${custom_ports[@]}"; do
+        sudo ufw deny "$port" > /dev/null 2>&1
+        echo -e "${GREEN}[+] Port $port blocked (custom).${NC}"
+    done
 
     # Deny all incoming connections
     sudo ufw default deny incoming > /dev/null 2>&1
@@ -70,13 +111,18 @@ secure_ufw_ports() {
     # Reload UFW
     sudo ufw reload > /dev/null 2>&1
 
-    echo -e "${GREEN}[+] Critical ports successfully closed!${NC}"
+    echo -e "${GREEN}[+] Critical ports and custom ports successfully closed!${NC}"
     echo -e "${GREEN}[+] All incoming connections denied, outgoing connections allowed.${NC}"
+
+    read -n 1 -s -r -p "Press any key to return to the menu..."
 }
+
 
 # Opensnitch manual start reminder
 opensnitch_manual_start() {
     echo -e "${YELLOW}[!] You need to manually start the Opensnitch GUI application. To do this, type 'opensnitch-ui' in the terminal.${NC}"
+
+    read -n 1 -s -r -p "Press any key to return to the menu..."
 }
 
 # Activate DNSCrypt
@@ -97,6 +143,8 @@ activate_dnscrypt() {
     sudo systemctl restart dnscrypt-proxy > /dev/null 2>&1
     
     echo -e "${GREEN}[+] dnscrypt-proxy successfully activated and configured!${NC}"
+
+    read -n 1 -s -r -p "Press any key to return to the menu..."
 }
 
 # Check and install vsftpd if needed
@@ -113,6 +161,8 @@ install_vsftpd_if_needed() {
     else
         echo -e "${GREEN}[+] vsftpd service is already installed and running.${NC}"
     fi
+
+    read -n 1 -s -r -p "Press any key to return to the menu..."
 }
 
 setup_fail2ban_rules() { 
@@ -184,6 +234,8 @@ EOL"
     sudo systemctl restart fail2ban > /dev/null 2>&1
 
     echo -e "${GREEN}[+] Fail2ban configuration completed successfully! SSH, FTP (vsftpd), HTTP, SMTP, and other services are protected.${NC}"
+
+    read -n 1 -s -r -p "Press any key to return to the menu..."
 }
 
 # Security scans interaction with the user
@@ -225,6 +277,8 @@ run_security_scans() {
     else
         echo -e "${YELLOW}[!] Skipped security scans.${NC}"
     fi
+
+    read -n 1 -s -r -p "Press any key to return to the menu..."
 }
 
 # Tor configuration function
@@ -245,6 +299,8 @@ configure_tor() {
     fi
 
     echo -e "${GREEN}[+] Tor successfully configured! The proxy is available at 'localhost:9050' for all connections.${NC}"
+
+    read -n 1 -s -r -p "Press any key to return to the menu..."
 }
 
 user_custom_setup() {
