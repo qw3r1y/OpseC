@@ -17,9 +17,9 @@ chmod +x *
 
 
 -------------------------------------------------------------------------------
-After running the `start.sh` file, you will see 3 options:
+After running the `start.sh` tools, you will see 3 options:
 
-### 1. Installing Required Files 📥
+### 1. Installing Required Tool 📥
 
 This option installs the following tools required for the OPSEC tool:
 
@@ -65,6 +65,10 @@ There are three sub-options in this section:
   <img src="https://github.com/user-attachments/assets/189aaefe-9d7a-4cb7-ad57-0de57d8edd04" alt="3" width="600"/>
 </p>
 
+<p align="center">
+  <strong>Figure 1:</strong> Menu with all download tools.
+</p>
+
 -------------------------------------------------------------------------------------
 
 ### 2. Config Settings Menu ⚙️
@@ -89,6 +93,9 @@ With this option, you can access the configuration settings of the above install
 <p align="center">
   <img src="https://github.com/user-attachments/assets/4a86e3a9-056c-44cf-8fde-992397fa7568" alt="4" width="600"/>
 </p>
+<p align="center">
+  <strong>Figure 1:</strong> Config Settings Menu.
+</p>
 
 ----------------------------------------------------------------
 ### 3. View Logs and Active Rules 📊
@@ -107,6 +114,10 @@ With this option, you can see the logs and active security rules from the tools 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/954f1332-bda1-4b43-8a59-5f724f2fba5f" alt="5" width="600"/>
 </p>
+<p align="center">
+  <strong>Figure 1:</strong> View Logs and Active Rules Menu.
+</p>
+
 -------------------------------------------------------------------------------
 ## Usage Notes 📝
 
