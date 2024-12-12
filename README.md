@@ -17,24 +17,25 @@ After running the `start.sh` file, you will see 3 options:
 
 This option installs the following tools required for the OPSEC tool:
 
-  - **Strongswan**: A tool used for secure VPN connections.
-  - **Tor**: Anonymizing tool for Internet privacy.
-  - **Suricata**: A network-based threat detection and prevention tool.
-  - **Chkrootkit**: A tool used for rootkit detection.
-  - **Rkhunter**: Provides rootkit detection and system security auditing.
-  - **ClamAV**: Virus scanning and malware analysis.
-  - **Firejail**: A security tool that provides application isolation.
-  - **VPN Settings**: Configure VPN for secure connection.
-  - **Tor Browser**: Anonymous web browsing.
-  - **UFW (Uncomplicated Firewall)**: A simple and effective firewall tool.
-  - **OpenSnitch**: Outbound connection monitoring.
-  - **DNSCrypt**: A tool used to encrypt DNS traffic.
-  - **ExifTool**: Edits and displays file metadata.
-  - **BleachBit**: Disk cleaning and privacy protection tool.
-  - **KeePass**: A software for password management.
-  - **Signal**: Secure messaging app.
-  - **Fail2Ban**: Protection against brute force attacks.
-  - **OSSEC**: Host-based security and log analysis tool.
+- **Strongswan**: Secure VPN connections.
+- **Tor**: Anonymizing tool for internet privacy.
+- **Suricata**: Network-based threat detection and prevention.
+- **Chkrootkit**: Rootkit detection.
+- **Rkhunter**: Rootkit detection and system auditing.
+- **ClamAV**: Virus scanning and malware analysis.
+- **Firejail**: Application isolation.
+- **VPN Settings**: VPN configuration for secure connections.
+- **Tor Browser**: Anonymous web browsing.
+- **UFW**: Simple firewall.
+- **OpenSnitch**: Outbound connection monitoring.
+- **DNSCrypt**: DNS traffic encryption.
+- **ExifTool**: File metadata editing.
+- **BleachBit**: Disk cleaning and privacy tool.
+- **KeePass**: Password management.
+- **Signal**: Secure messaging app.
+- **Fail2Ban**: Protection against brute-force attacks.
+- **OSSEC**: Host-based security and log analysis.
+
 
 There are three sub-options in this section:
 
