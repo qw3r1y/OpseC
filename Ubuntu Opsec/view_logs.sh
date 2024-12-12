@@ -14,6 +14,20 @@ if [ "$(id -u)" -ne 0 ]; then
     exit 1
 fi
 
+check_and_install_xterm() {
+    if ! dpkg-query -l | grep -q "xterm"; then
+        echo -e "${YELLOW}xterm is not installed. Installing...${RESET}"
+        sudo apt update && sudo apt install -y xterm
+        if dpkg-query -l | grep -q "xterm"; then
+            echo -e "${GREEN}xterm has been successfully installed.${RESET}"
+        else
+            echo -e "${RED}xterm installation failed!${RESET}"
+            exit 1
+        fi
+    else
+        echo -e "${GREEN}xterm is already installed.${RESET}"
+    fi
+}
 # Log file paths
 OSSEC_LOG="/var/ossec/logs/alerts/alerts.log"
 SURICATA_LOG="/var/log/suricata/fast.log"
@@ -97,6 +111,8 @@ check_dnscrypt_status() {
 # Main function
 main() {
     # Check and start OSSEC and Suricata services
+
+    check_and_install_xterm()
     check_and_start_service "ossec" "systemctl start ossec"
     check_and_start_service "suricata" "systemctl start suricata"
 
