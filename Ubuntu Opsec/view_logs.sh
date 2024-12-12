@@ -113,7 +113,8 @@ check_dnscrypt_status() {
 main() {
     # Check and start OSSEC and Suricata services
 
-    check_and_install_xterm()
+    check_and_install_xterm
+    
     check_and_start_service "ossec" "systemctl start ossec"
     check_and_start_service "suricata" "systemctl start suricata"
 
