@@ -12,9 +12,10 @@ chmod +x *
 ```
 ![opsecmenu](https://github.com/user-attachments/assets/4e2ac820-b9fb-4812-bf43-e64984b02b4c)
 
-After running the `start.sh` file, you will see 3 options:
 
 -------------------------------------------------------------------------------
+After running the `start.sh` file, you will see 3 options:
+
 ### 1. Installing Required Files 📥
 
 This option installs the following tools required for the OPSEC tool:
@@ -95,7 +96,7 @@ With this option, you can see the logs and active security rules from the tools 
     
 ![5](https://github.com/user-attachments/assets/954f1332-bda1-4b43-8a59-5f724f2fba5f)
 
-
+-------------------------------------------------------------------------------
 ## Usage Notes 📝
 
   - The tool is designed to work on Linux-based systems.
