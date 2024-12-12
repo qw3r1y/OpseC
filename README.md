@@ -76,7 +76,7 @@ There are three sub-options in this section:
 With this option, you can access the configuration settings of the above installed tools. You can customize certain tools as you wish or apply default settings for all tools.
 
 - **Automatic Settings:**
-  - Remote access ports (SSH, FTP, etc.) such as 22, 21, 3389 are closed.
+  - Remote access ports (SSH, FTP, etc.) such as 22, 21, 3389 are closed or a port is requested for entry.
   - The system is protected against brute force attacks.
   - DNSCrypt tool is enabled.
 
