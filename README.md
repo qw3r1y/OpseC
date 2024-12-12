@@ -112,7 +112,7 @@ With this option, you can see the logs and active security rules from the tools 
   - Allows you to see whether Dnscrypt is enabled or not.
     
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/954f1332-bda1-4b43-8a59-5f724f2fba5f" alt="5" width="700"/>
+  <img src="https://github.com/user-attachments/assets/954f1332-bda1-4b43-8a59-5f724f2fba5f" alt="5" width="800"/>
 </p>
 <p align="center">
   <strong>Figure 4:</strong> View Logs and Active Rules Menu.
