@@ -16,6 +16,7 @@ chmod +x *
 ### 1. Gerekli Dosyaların Yüklenmesi
 
 Bu seçenek, OPSEC aracı için gerekli olan aşağıdaki araçları yükler:
+
      - **Strongswan:** Güvenli VPN bağlantıları için kullanılan bir araç.
      - **Tor:** İnternet gizliliği için anonimleştirici bir araç.
      - **Suricata:** Ağ tabanlı tehdit algılama ve önleme aracı.
