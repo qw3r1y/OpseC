@@ -13,7 +13,7 @@ chmod +x *
 
 `start.sh` dosyasını çalıştırdıktan sonra karşınıza 3 adet seçenek çıkacaktır:
 
-### 1. Gerekli Dosyaların Yüklenmesi
+### 1. Gerekli Dosyaların Yüklenmesi 📥
 
 Bu seçenek, OPSEC aracı için gerekli olan aşağıdaki araçları yükler:
 
@@ -52,7 +52,7 @@ Bu bölümde üç alt seçenek bulunur:
    - Sisteminizde bulunup bulunmadığına bakmaksızın tüm aşağıdaki araçları yeniden yükler:
      - **Strongswan, Tor, Suricata, Chkrootkit, Rkhunter, ClamAV, Firejail, VPN Ayarları, Tor Tarayıcı, UFW, OpenSnitch, DNSCrypt, ExifTool, BleachBit, KeePass, Signal, Fail2Ban, OSSEC.**
 
-### 2. Config Ayarları Menüsü
+### 2. Config Ayarları Menüsü ⚙️
 
 Bu seçenek ile yukarıda yüklenen araçların konfigürasyon ayarlarına erişebilirsiniz. İsteğinize bağlı olarak belirli araçları özelleştirilebilir ya da tüm araçlar için varsayılan ayarları uygulayabilirsiniz.
 
@@ -72,7 +72,7 @@ Bu seçenek ile yukarıda yüklenen araçların konfigürasyon ayarlarına eriş
   - **Tor**: Gizlilik ve anonimlik için Tor yapılandırılır.
 
 
-### 3. Logları ve Aktif Kuralları Görüntüleme
+### 3. Logları ve Aktif Kuralları Görüntüleme 📊
 
 Bu seçenek ile sistemde yüklü olan araçlardan gelen logları ve aktif güvenlik kurallarını görebilirsiniz.
 
@@ -86,7 +86,7 @@ Bu seçenek ile sistemde yüklü olan araçlardan gelen logları ve aktif güven
   - Dnsycriptin etkin olup olmadığını görmeninizi sağlar.
 
  
-## Kullanım Notları
+## Kullanım Notları 📝
 
 - Araç, Linux tabanlı sistemlerde çalışmak üzere tasarlanmıştır.
 - `start.sh` dosyasını çalıştırmadan önce gerekli izinlerin verildiğinden emin olun.
