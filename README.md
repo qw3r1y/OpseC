@@ -17,24 +17,25 @@ chmod +x *
 
 Bu seçenek, OPSEC aracı için gerekli olan aşağıdaki araçları yükler:
 
-     - **Strongswan:** Güvenli VPN bağlantıları için kullanılan bir araç.
-     - **Tor:** İnternet gizliliği için anonimleştirici bir araç.
-     - **Suricata:** Ağ tabanlı tehdit algılama ve önleme aracı.
-     - **Chkrootkit:** Rootkit tespiti için kullanılan bir araç.
-     - **Rkhunter:** Rootkit tespiti ve sistem güvenliği denetimi sağlar.
-     - **ClamAV:** Virüs tarama ve zararlı yazılım analizi.
-     - **Firejail:** Uygulama izolasyonu sağlayan bir güvenlik araç.
-     - **VPN Ayarları:** Güvenli bağlantı için VPN yapılandırma.
-     - **Tor Tarayıcı:** Anonim web taraması.
-     - **UFW (Uncomplicated Firewall):** Basit ve etkili bir güvenlik duvarı araç.
-     - **OpenSnitch:** Giden bağlantı izleme.
-     - **DNSCrypt:** DNS trafiğini şifrelemek için kullanılan bir araç.
-     - **ExifTool:** Dosya meta verilerini düzenler ve görüntüler.
-     - **BleachBit:** Disk temizleme ve gizlilik koruma araç.
-     - **KeePass:** Parola yönetimi için bir yazılım.
-     - **Signal:** Güvenli mesajlaşma uygulaması.
-     - **Fail2Ban:** Brute force saldırılarına karşı koruma.
-     - **OSSEC:** Host tabanlı güvenlik ve log analizi araç.
+- **Strongswan**: Güvenli VPN bağlantıları için kullanılan bir araç.
+- **Tor**: İnternet gizliliği için anonimleştirici bir araç.
+- **Suricata**: Ağ tabanlı tehdit algılama ve önleme aracı.
+- **Chkrootkit**: Rootkit tespiti için kullanılan bir araç.
+- **Rkhunter**: Rootkit tespiti ve sistem güvenliği denetimi sağlar.
+- **ClamAV**: Virüs tarama ve zararlı yazılım analizi.
+- **Firejail**: Uygulama izolasyonu sağlayan bir güvenlik aracı.
+- **VPN Ayarları**: Güvenli bağlantı için VPN yapılandırma.
+- **Tor Tarayıcı**: Anonim web taraması.
+- **UFW (Uncomplicated Firewall)**: Basit ve etkili bir güvenlik duvarı aracı.
+- **OpenSnitch**: Giden bağlantı izleme.
+- **DNSCrypt**: DNS trafiğini şifrelemek için kullanılan bir araç.
+- **ExifTool**: Dosya meta verilerini düzenler ve görüntüler.
+- **BleachBit**: Disk temizleme ve gizlilik koruma aracı.
+- **KeePass**: Parola yönetimi için bir yazılım.
+- **Signal**: Güvenli mesajlaşma uygulaması.
+- **Fail2Ban**: Brute force saldırılarına karşı koruma.
+- **OSSEC**: Host tabanlı güvenlik ve log analizi aracı.
+
 
 
 Bu bölümde üç alt seçenek bulunur:
@@ -80,6 +81,10 @@ Bu seçenek ile sistemde yüklü olan araçlardan gelen logları ve aktif güven
 - **Kapalı Portlar ve Kurallar:**
   - Yetkisiz erişime kapalı olan portlar ve aktif güvenlik kurallarını görüntüleyebilirsiniz.
 
+- **Dnscrypt Etkinleştirme:**
+  - Dnsycriptin etkin olup olmadığını görmeninizi sağlar.
+
+ 
 ## Kullanım Notları
 
 - Araç, Linux tabanlı sistemlerde çalışmak üzere tasarlanmıştır.
