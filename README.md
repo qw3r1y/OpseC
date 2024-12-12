@@ -1,93 +1,89 @@
-# OPSEC Araçları 🛡️
+# OPSEC Tools 🛡️
 
-Bu araç, güvenlik odaklı sistemlerinizi yapılandırmanıza, yönetmenize ve izlemeye yardımcı olmak için tasarlanmış 4 farklı bash betiğinden oluşmaktadır. Aşağıda araç hakkında detaylı bilgi ve kullanım talimatlarını bulabilirsiniz.
+This tool consists of 4 different bash scripts designed to help you configure, manage and monitor your security-focused systems. Below you can find detailed information about the tool and instructions for use.
 
-## Başlangıç 🚀
+## Getting Started 🚀
 
-Aracı çalıştırmadan önce tüm dosyalara gerekli izinleri vermeniz gerekmektedir. Bunu şu şekilde yapabilirsiniz:
+Before running the tool, you need to grant the necessary permissions to all files. You can do this as follows:
 
 ```bash
 chmod +x *
 ./start.sh
 ```
 
-`start.sh` dosyasını çalıştırdıktan sonra karşınıza 3 adet seçenek çıkacaktır:
+After running the `start.sh` file, you will see 3 options:
 
-### 1. Gerekli Dosyaların Yüklenmesi 📥
+### 1. Installing Required Files 📥
 
-Bu seçenek, OPSEC aracı için gerekli olan aşağıdaki araçları yükler:
+This option installs the following tools required for the OPSEC tool:
 
-- **Strongswan**: Güvenli VPN bağlantıları için kullanılan bir araç.
-- **Tor**: İnternet gizliliği için anonimleştirici bir araç.
-- **Suricata**: Ağ tabanlı tehdit algılama ve önleme aracı.
-- **Chkrootkit**: Rootkit tespiti için kullanılan bir araç.
-- **Rkhunter**: Rootkit tespiti ve sistem güvenliği denetimi sağlar.
-- **ClamAV**: Virüs tarama ve zararlı yazılım analizi.
-- **Firejail**: Uygulama izolasyonu sağlayan bir güvenlik aracı.
-- **VPN Ayarları**: Güvenli bağlantı için VPN yapılandırma.
-- **Tor Tarayıcı**: Anonim web taraması.
-- **UFW (Uncomplicated Firewall)**: Basit ve etkili bir güvenlik duvarı aracı.
-- **OpenSnitch**: Giden bağlantı izleme.
-- **DNSCrypt**: DNS trafiğini şifrelemek için kullanılan bir araç.
-- **ExifTool**: Dosya meta verilerini düzenler ve görüntüler.
-- **BleachBit**: Disk temizleme ve gizlilik koruma aracı.
-- **KeePass**: Parola yönetimi için bir yazılım.
-- **Signal**: Güvenli mesajlaşma uygulaması.
-- **Fail2Ban**: Brute force saldırılarına karşı koruma.
-- **OSSEC**: Host tabanlı güvenlik ve log analizi aracı.
+- **Strongswan**: A tool used for secure VPN connections.
+- **Tor**: Anonymizing tool for Internet privacy.
+- **Suricata**: A network-based threat detection and prevention tool.
+- **Chkrootkit**: A tool used for rootkit detection.
+- **Rkhunter**: Provides rootkit detection and system security auditing.
+- **ClamAV**: Virus scanning and malware analysis.
+- **Firejail**: A security tool that provides application isolation.
+- **VPN Settings**: Configure VPN for secure connection.
+- **Tor Browser**: Anonymous web browsing.
+- **UFW (Uncomplicated Firewall)**: A simple and effective firewall tool.
+- **OpenSnitch**: Outbound connection monitoring.
+- **DNSCrypt**: A tool used to encrypt DNS traffic.
+- **ExifTool**: Edits and displays file metadata.
+- **BleachBit**: Disk cleaning and privacy protection tool.
+- **KeePass**: A software for password management.
+- **Signal**: Secure messaging app.
+- **Fail2Ban**: Protection against brute force attacks.
+- **OSSEC**: Host-based security and log analysis tool.
 
+There are three sub-options in this section:
 
+1. **Clean Installation:**
+- If there are previously installed files on your system, it removes them and performs a clean installation from scratch.
 
-Bu bölümde üç alt seçenek bulunur:
+2. **Installing Missing Tools:**
+- Checks if the tools are available on your system and installs the missing ones.
+- Completes the following missing tools:
+- **Strongswan, Tor, Suricata, Chkrootkit, Rkhunter, ClamAV, Firejail, VPN Settings, Tor Browser, UFW, OpenSnitch, DNSCrypt, ExifTool, BleachBit, KeePass, Signal, Fail2Ban, OSSEC.**
 
-1. **Temiz Kurulum:**
-   - Sisteminizde daha önce yüklenmiş olan dosyalar varsa, bunları kaldırır ve sıfırdan temiz bir kurulum yapar.
+3. **Installing All Tools:**
+- Reinstalls all the following tools regardless of whether they are present on your system:
+- **Strongswan, Tor, Suricata, Chkrootkit, Rkhunter, ClamAV, Firejail, VPN Settings, Tor Browser, UFW, OpenSnitch, DNSCrypt, ExifTool, BleachBit, KeePass, Signal, Fail2Ban, OSSEC.**
 
-2. **Eksik Araçların Yüklenmesi:**
-   - Araçların sisteminizde mevcut olup olmadığını kontrol eder ve eksik olanları yükler.
-   - Eksik olan aşağıdaki araçların tamamlanmasını sağlar:
-     - **Strongswan, Tor, Suricata, Chkrootkit, Rkhunter, ClamAV, Firejail, VPN Ayarları, Tor Tarayıcı, UFW, OpenSnitch, DNSCrypt, ExifTool, BleachBit, KeePass, Signal, Fail2Ban, OSSEC.**
+### 2. Config Settings Menu ⚙️
 
-3. **Tüm Araçların Yüklenmesi:**
-   - Sisteminizde bulunup bulunmadığına bakmaksızın tüm aşağıdaki araçları yeniden yükler:
-     - **Strongswan, Tor, Suricata, Chkrootkit, Rkhunter, ClamAV, Firejail, VPN Ayarları, Tor Tarayıcı, UFW, OpenSnitch, DNSCrypt, ExifTool, BleachBit, KeePass, Signal, Fail2Ban, OSSEC.**
+With this option, you can access the configuration settings of the above installed tools. You can customize certain tools as you wish or apply default settings for all tools.
 
-### 2. Config Ayarları Menüsü ⚙️
+- **Automatic Settings:**
+- Remote access ports (SSH, FTP, etc.) such as 22, 21, 3389 are closed.
+- The system is protected against brute force attacks.
+- DNSCrypt tool is enabled.
 
-Bu seçenek ile yukarıda yüklenen araçların konfigürasyon ayarlarına erişebilirsiniz. İsteğinize bağlı olarak belirli araçları özelleştirilebilir ya da tüm araçlar için varsayılan ayarları uygulayabilirsiniz.
+- **Tool Settings:**
+- **Firejail**: Application isolation is configured and its usage is explained.
+- **UFW**: Ports are configured for a simple and effective firewall tool.
+- **OpenSnitch**: Outbound connection monitoring tool is reminded to start manually.
+- **DNSCrypt**: Encryption of DNS traffic is enabled.
+- **Fail2Ban**: Protection rules against brute force attacks are configured.
+- **Suricata**: Network-based threat detection and prevention tool is configured.
+- **Security Scans**: Scans are performed for system security.
+- **Tor**: Tor is configured for privacy and anonymity.
 
-- **Otomatik Ayarlar:**
-  - 22, 21, 3389 gibi uzak erişim portları (SSH, FTP vb.) kapatılmıştır.
-  - Sistem brute force saldırılarına karşı korunmuştur.
-  - DNSCrypt aracı etkinleştirilmiştir.
+### 3. View Logs and Active Rules 📊
 
-- **Araç Ayarları:**
-  - **Firejail**: Uygulama izolasyonu yapılandırılır ve kullanımı açıklanır.
-  - **UFW**: Basit ve etkili bir güvenlik duvarı aracı için portlar yapılandırılır.
-  - **OpenSnitch**: Giden bağlantı izleme aracı elle başlatma hatırlatması yapılır.
-  - **DNSCrypt**: DNS trafiğinin şifrelenmesi etkinleştirilir.
-  - **Fail2Ban**: Brute force saldırılarına karşı koruma kuralları yapılandırılır.
-  - **Suricata**: Ağ tabanlı tehdit algılama ve önleme aracı yapılandırılır.
-  - **Güvenlik Taramaları**: Sistem güvenliği için taramalar yapılır.
-  - **Tor**: Gizlilik ve anonimlik için Tor yapılandırılır.
+With this option, you can see the logs and active security rules from the tools installed on the system.
 
+- **Suricata and OSSEC Logs:**
+- You can detect suspicious activities on the system.
 
-### 3. Logları ve Aktif Kuralları Görüntüleme 📊
+- **Closed Ports and Rules:**
+- You can view the ports that are closed to unauthorized access and active security rules.
 
-Bu seçenek ile sistemde yüklü olan araçlardan gelen logları ve aktif güvenlik kurallarını görebilirsiniz.
+- **Dnscrypt Enablement:**
+- Allows you to see whether Dnscrypt is enabled or not.
 
-- **Suricata ve OSSEC Logları:**
-  - Sistem üzerindeki şüpheli aktiviteleri tespit edebilirsiniz.
+## Usage Notes 📝
 
-- **Kapalı Portlar ve Kurallar:**
-  - Yetkisiz erişime kapalı olan portlar ve aktif güvenlik kurallarını görüntüleyebilirsiniz.
-
-- **Dnscrypt Etkinleştirme:**
-  - Dnsycriptin etkin olup olmadığını görmeninizi sağlar.
-
- 
-## Kullanım Notları 📝
-
-- Araç, Linux tabanlı sistemlerde çalışmak üzere tasarlanmıştır.
-- `start.sh` dosyasını çalıştırmadan önce gerekli izinlerin verildiğinden emin olun.
-- Yüklenilen araçlar ve konfigürasyonlar hakkında daha fazla bilgi almak için ilgili araçların dokümantasyona göz atabilirsiniz.
+- The tool is designed to work on Linux-based systems.
+- Make sure that the necessary permissions are granted before running the `start.sh` file.
+- For more information about the installed tools and configurations, you can review the documentation of the relevant tools.
