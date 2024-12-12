@@ -7,6 +7,9 @@ This tool consists of 4 different bash scripts designed to help you configure, m
 Before running the tool, you need to grant the necessary permissions to all files. You can do this as follows:
 
 ```bash
+git clone https://github.com/qw3r1y/OpseC
+cd OpseC
+cd Ubuntu Opsec or Other Opsec
 chmod +x *
 ./start.sh
 ```
