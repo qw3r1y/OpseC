@@ -10,9 +10,11 @@ Before running the tool, you need to grant the necessary permissions to all file
 chmod +x *
 ./start.sh
 ```
+![opsecmenu](https://github.com/user-attachments/assets/4e2ac820-b9fb-4812-bf43-e64984b02b4c)
 
 After running the `start.sh` file, you will see 3 options:
 
+-------------------------------------------------------------------------------
 ### 1. Installing Required Files 📥
 
 This option installs the following tools required for the OPSEC tool:
@@ -51,6 +53,11 @@ There are three sub-options in this section:
 - Reinstalls all the following tools regardless of whether they are present on your system:
   - **Strongswan, Tor, Suricata, Chkrootkit, Rkhunter, ClamAV, Firejail, VPN Settings, Tor Browser, UFW, OpenSnitch, DNSCrypt, ExifTool, BleachBit, KeePass, Signal, Fail2Ban, OSSEC.**
 
+![2](https://github.com/user-attachments/assets/8ba2cb9c-39c6-4796-99f9-c01fa3d67c70)
+![3](https://github.com/user-attachments/assets/189aaefe-9d7a-4cb7-ad57-0de57d8edd04)
+
+-------------------------------------------------------------------------------------
+
 ### 2. Config Settings Menu ⚙️
 
 With this option, you can access the configuration settings of the above installed tools. You can customize certain tools as you wish or apply default settings for all tools.
@@ -69,7 +76,10 @@ With this option, you can access the configuration settings of the above install
   - **Suricata**: Network-based threat detection and prevention tool is configured.
   - **Security Scans**: Scans are performed for system security.
   - **Tor**: Tor is configured for privacy and anonymity.
+ 
+![4](https://github.com/user-attachments/assets/4a86e3a9-056c-44cf-8fde-992397fa7568)
 
+----------------------------------------------------------------
 ### 3. View Logs and Active Rules 📊
 
 With this option, you can see the logs and active security rules from the tools installed on the system.
@@ -82,6 +92,9 @@ With this option, you can see the logs and active security rules from the tools 
 
 - **Dnscrypt Enablement:**
   - Allows you to see whether Dnscrypt is enabled or not.
+    
+![5](https://github.com/user-attachments/assets/954f1332-bda1-4b43-8a59-5f724f2fba5f)
+
 
 ## Usage Notes 📝
 
