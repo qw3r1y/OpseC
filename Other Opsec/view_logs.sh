@@ -13,6 +13,7 @@ if [ "$(id -u)" -ne 0 ]; then
     echo -e "${RED}You need root privileges to run this script.${RESET}"
     exit 1
 fi
+echo -e "${YELLOW}[!] Please make sure to configure your settings by selecting option 2 in the main menu. If not done, log monitoring may not work properly.${RESET}"
 
 check_and_install_xterm() {
     if ! dpkg-query -l | grep -q "xterm"; then
